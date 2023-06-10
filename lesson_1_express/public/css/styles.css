@@ -1,0 +1,520 @@
+/* цвет основного текста #212121 */
+/* вторичный цвет текста  #757575;
+ */
+/* белый #E5E5E5  */
+/* акцент #2196F3 */
+/* вторичный цвет фона #2196F3; */
+/* цвет фона иконок  #F5F4FA */
+
+:root {
+  --primary-text-color: #757575;
+  --title-color: #212121;
+  --hero-adress-title-color: #ffffff;
+  --accent-color: #2196f3;
+  --icon-background-color: #f5f4fa;
+  --icon-fill-color: #ffffff;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.03em;
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.container.features {
+  padding-top: 94px;
+}
+
+.container.nav {
+  height: 80px;
+}
+
+.feature-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feature-list,
+.whatwedo-list {
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list .text {
+  width: 270px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Header */
+
+.logo {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.02em;
+
+  text-decoration: none;
+
+  margin-right: 93px;
+}
+
+.logo-half-one {
+  color: var(--accent-color);
+}
+
+.logo-half-two {
+  color: #000;
+}
+
+/* Site nav */
+
+.container-main-nav {
+  display: flex;
+  margin-right: auto;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav {
+  display: flex;
+  width: 294px;
+  text-decoration: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-nav .link {
+  color: var(--title-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  text-decoration: none;
+}
+
+.site-nav .link:hover,
+.site-nav .link:focus {
+  color: var(--accent-color);
+}
+
+.site-nav .link.current {
+  color: var(--accent-color);
+}
+
+.container.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-nav.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phone-icon,
+.mail-icon {
+  margin-right: 10px;
+  fill: #757575;
+}
+
+.mail-icon:hover,
+.phone-icon:hover .mail-icon:focus,
+.phone-icon:focus {
+  fill: var(--accent-color);
+}
+
+.mail-box,
+.phone-box {
+  display: flex;
+  align-items: center;
+}
+
+.mail-box {
+  margin-right: 30px;
+}
+
+.mail,
+.tel {
+  color: var(--primary-text-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  text-decoration: none;
+}
+
+.mail:hover,
+.tel:hover,
+.mail:focus,
+.tel:focus {
+  color: var(--accent-color);
+}
+/* Hero */
+
+.hero-title {
+  color: var(--hero-adress-title-color);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  margin-top: 0;
+  padding-top: 200px;
+}
+
+.section.hero {
+  background-color: #c4c4c4;
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 1px solid black;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../img/bgimage.jpg);
+}
+
+/* Section */
+
+.section-title {
+  color: var(--title-color);
+  margin-top: 0;
+
+  padding-top: 94px;
+  margin-bottom: 50px;
+}
+
+/* Преимущества */
+
+.list-item {
+  display: flex;
+  width: 270px;
+  height: 120px;
+  border-radius: 4px;
+
+  background-color: var(--icon-background-color);
+}
+
+.list-item .icon {
+  margin: auto;
+}
+/* .list-item::before {
+    display: block;
+    content: "";
+    height: 120px;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--icon-background-color);
+  } */
+
+/* .icon-satellite::before {
+    background-image: url(../img/satellite.svg);
+    background-size: auto;
+  }
+  
+  .icon-clock::before {
+    background-image: url(../img/clock.svg);
+  }
+  
+  .icon-computer::before {
+    background-image: url(../img/computer.svg);
+  }
+  
+  .icon-spaceman::before {
+    background-image: url(../img/spaceman.svg);
+  } */
+
+.feature-list .title {
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+
+  text-transform: uppercase;
+
+  padding-top: 0px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+.feature-list {
+  list-style: none;
+}
+
+.feature-list .text {
+  color: var(--primary-text-color);
+
+  margin-bottom: 0;
+  padding-bottom: 94px;
+}
+
+/* Чем мы занимаемся */
+
+.whatwedo-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+
+  padding-bottom: 94px;
+}
+
+/* Нашы сотрудники */
+
+.employees-section {
+  background-color: #f5f4fa;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.18;
+
+  text-align: center;
+}
+.employees-list {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.employees-list .text {
+  color: var(--primary-text-color);
+  font-weight: 400;
+
+  margin-bottom: 30px;
+}
+
+.employee.box {
+  width: 270px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+
+  margin-bottom: 94px;
+}
+
+.employee-links {
+  display: flex;
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.link-box {
+  display: flex;
+  width: 44px;
+  height: 44px;
+}
+
+.link-box:hover {
+  width: 44px;
+  height: 44px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.link-icon {
+  margin: auto;
+  fill: #afb1b8;
+}
+
+.link-icon:hover {
+  fill: var(--icon-fill-color);
+}
+
+/* Clients */
+
+.client-box {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  width: 170px;
+  height: 92px;
+}
+
+.client-box .icon {
+  margin: auto;
+  fill: #afb1b8;
+}
+
+.client-box:hover {
+  border: 1px solid #2196f3;
+}
+
+.client-box .icon:hover {
+  fill: var(--accent-color);
+}
+
+.list.clients {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container.clients {
+  padding-bottom: 94px;
+}
+
+/* Button */
+
+.button {
+  color: #ffffff;
+  background-color: var(--accent-color);
+  cursor: pointer;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+
+  margin-bottom: 200px;
+  padding: 10px 32px 10px 32px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  min-width: 200px;
+}
+
+.button-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Footer */
+
+footer {
+  background-color: #2f303a;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.container.footer {
+  display: flex;
+}
+
+.adress-container {
+  margin-right: 70px;
+}
+
+.logo {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.02em;
+
+  text-decoration: none;
+}
+
+.footer .logo {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.logo-half-one {
+  color: var(--accent-color);
+}
+
+.footer .logo-half-two {
+  color: #ffffff;
+}
+
+.footer .container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.adress {
+  color: var(--hero-adress-title-color);
+  font-style: normal;
+
+  font-weight: 400;
+}
+
+.adress a {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: normal;
+  text-decoration: none;
+}
+
+.join-list-container {
+  width: 206px;
+}
+
+.join-list-container .title {
+  color: var(--hero-adress-title-color);
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+}
+
+.join-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0;
+}
+
+.join-list-box {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.join-list-box:hover {
+  width: 44px;
+  height: 44px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.join-list-icon {
+  margin: auto;
+  fill: var(--icon-fill-color);
+}
