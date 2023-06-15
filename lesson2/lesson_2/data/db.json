@@ -1,0 +1,46 @@
+{
+  "cats": [
+    {
+      "id": "f7585ff6-ff26-4958-9a0e-962d0e8c4a16",
+      "name": "Simon",
+      "age": 3,
+      "isVaccinated": false
+    },
+    {
+      "id": "46b9c855-2249-404e-97e2-7116f6712b59",
+      "name": "Monya",
+      "age": 5,
+      "isVaccinated": false
+    },
+    {
+      "id": "2c2d04c6-712b-4983-9313-cc33b9248f51",
+      "name": "Lala",
+      "age": 5,
+      "isVaccinated": false
+    },
+    {
+      "id": "ea9c2f3b-211d-4334-a735-eb8fb2974284",
+      "name": "Lalal",
+      "age": 2,
+      "isVaccinated": true
+    },
+    {
+      "id": "36d096c5-4f1d-4bd8-9360-2b541d5d3e5e",
+      "name": "Lalal",
+      "age": 5,
+      "isVaccinated": false
+    },
+    {
+      "id": "26e9525d-9e03-4f69-8406-094b5f903d01",
+      "name": "Igor",
+      "age": 32,
+      "isVaccinated": false
+    },
+    {
+      "id": "e671c4f9-e681-4f85-8f1f-027e7fe3c190",
+      "name": "Igor",
+      "age": 32,
+      "isVaccinated": false
+    }
+  ]
+}
