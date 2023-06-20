@@ -1,63 +1,81 @@
-const { v4: uuid } = require("uuid");
-const { writeDb, readDb } = require("./db");
+const { Schema, model } = require("mongoose");
+const Joi = require("joi");
 
-const listContacts = async () => await readDb();
+const contactSchema = Schema(
+  {
+    name: {
+      type: String,
+      require: true,
+    },
+    email: {
+      type: String,
+      unique: true,
+      match: [
+        /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/,
+        "Please fill a valid email address",
+      ],
+      require: true,
+    },
+    phone: {
+      type: String,
+      match: [/^\+380\d{9}$/, "phone number must be in format +380XXXXXXXXX"],
+      require: true,
+    },
+    active: {
+      type: Boolean,
+      default: true,
+    },
+    favorite: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  { versionKey: false, timestamps: true }
+);
 
-const getContactById = async (contactId) => {
-  const contacts = await readDb();
+const Contacts = model("contacts", contactSchema);
 
-  return contacts.find(({ id }) => id === contactId);
-};
+const createContactValidation = Joi.object({
+  name: Joi.string().required(),
+  email: Joi.string()
+    .email({
+      minDomainSegments: 2,
+      tlds: { allow: ["com", "net"] },
+    })
+    .required(),
+  phone: Joi.string()
+    .pattern(/^\+38\d{10}$/)
+    .required()
+    .messages({
+      "string.pattern.base": `phone number must be in format +380XXXXXXXXX`,
+    }),
+});
 
-const removeContact = async (contactId) => {
-  const contacts = await readDb();
+const updateContactValidation = Joi.object({
+  name: Joi.string().optional(),
+  email: Joi.string()
+    .email({
+      minDomainSegments: 2,
+      tlds: {
+        allow: ["com", "net"],
+      },
+    })
+    .optional(),
+  phone: Joi.string()
+    .pattern(/^\+38\d{10}$/)
+    .optional()
+    .messages({
+      "string.pattern.base": `phone number must be in format +380XXXXXXXXX`,
+    }),
+});
 
-  const contactIndex = contacts.findIndex(({ id }) => id === contactId);
-
-  if (contactIndex !== -1) {
-    const contact = contacts.splice(contactIndex, 1);
-
-    await writeDb(contacts);
-    return contact;
-  }
-
-  return null;
-};
-
-const addContact = async (body) => {
-  const contacts = await readDb();
-
-  const newContact = {
-    id: uuid(),
-    ...body,
-  };
-
-  contacts.push(newContact);
-
-  await writeDb(contacts);
-  return newContact;
-};
-
-const updateContact = async (contactId, body) => {
-  const contacts = await readDb();
-
-  const foundContactIndex = contacts.findIndex(({ id }) => id === contactId);
-
-  if (foundContactIndex !== -1) {
-    contacts[foundContactIndex] = { ...contacts[foundContactIndex], ...body };
-
-    await writeDb(contacts);
-
-    return contacts[foundContactIndex];
-  }
-
-  return null;
-};
+const statusContactJoiSchema = Joi.object({
+  favorite: Joi.boolean().required(),
+});
 
 module.exports = {
-  listContacts,
-  getContactById,
-  removeContact,
-  addContact,
-  updateContact,
+  Contacts,
+  createContactValidation,
+  updateContactValidation,
+  statusContactJoiSchema,
 };
