@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ua">
+<meta charset="UTF-8"/>
+<head>
+
+    <title>Завантажити файли</title>
+</head>
+<body>
+<h2>Завантажити файли</h2>
+
+<form id="uploadForm" enctype="multipart/form-data">
+    <input type="image" name="image" id="fileInput" alt=""/>
+    <button type="submit">Завантажити</button>
+</form>
+
+<div id="status"></div>
+
+<script>
+    const form = document.getElementById('uploadForm')
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        const files = document.getElementById('fileInput').files
+        const formData = new FormData()
+        formData.append('file', files[0])
+    })
+
+</script>
+</body>
+</html>
+ 
