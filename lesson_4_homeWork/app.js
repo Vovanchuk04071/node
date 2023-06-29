@@ -17,6 +17,7 @@ app.use(express.json());
 
 app.use("/api/users", authRouter);
 app.use("/api/contacts", contactsRouter);
+app.use(express.static("public"));
 
 app.use((req, res) => {
   res.status(HttpCode.BAD_REQUEST).json({ message: "Not found" });

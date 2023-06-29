@@ -22,6 +22,10 @@ const usersSchema = Schema(
       default: "starter",
     },
     token: String,
+    avatarURL: {
+      type: String,
+      require: true,
+    },
   },
   { versionKey: false, timestamps: true }
 );

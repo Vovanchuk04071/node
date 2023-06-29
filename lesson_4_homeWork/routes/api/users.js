@@ -6,7 +6,7 @@ const {
   joiLoginSchema,
   joiSubscriptionSchema,
 } = require("../../models");
-const { ctrlWrapper, validate, auth } = require("../../middlewares");
+const { ctrlWrapper, validate, auth, upload } = require("../../middlewares");
 const { auth: ctrl } = require("../../controllers");
 
 router.post(
@@ -23,5 +23,12 @@ router.patch(
   auth,
   validate(joiSubscriptionSchema),
   ctrlWrapper(ctrl.updateSubscription)
+);
+
+router.patch(
+  "/avatars",
+  auth,
+  upload.single("avatars"),
+  ctrlWrapper(ctrl.updateAvatar)
 );
 module.exports = router;

@@ -1,12 +1,12 @@
 const { User } = require("../../models");
 const path = require("path");
 const fs = require("fs/promises");
+const { HttpCode } = require("../../helpers/constants");
 
-const avatarDir = path.join(__dirname, "../../", "public", "avatars");
+const avatarDir = path.join(__dirname, "../", "../", "public", "avatars");
 
 const updateAvatar = async (req, res) => {
   const { _id } = req.user;
-
   const { path: tempPath, originalname } = req.file;
   const imageName = `${_id}-${originalname}`;
 
@@ -21,7 +21,7 @@ const updateAvatar = async (req, res) => {
 
     res.json({
       status: "success",
-      code: 200,
+      code: HttpCode.OK,
       data: {
         avatarURL,
       },
