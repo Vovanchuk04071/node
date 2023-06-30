@@ -6,11 +6,10 @@ const { HttpCode } = require("../../helpers/constants");
 const avatarDir = path.join(__dirname, "../", "../", "public", "avatars");
 
 const updateAvatar = async (req, res) => {
-  const { _id } = req.user;
-  const { path: tempPath, originalname } = req.file;
-  const imageName = `${_id}-${originalname}`;
-
   try {
+    const { _id } = req.user;
+    const { path: tempPath, originalname } = req.file;
+    const imageName = `${_id}-${originalname}`;
     const resultPath = path.join(avatarDir, imageName);
 
     await fs.rename(tempPath, resultPath);
