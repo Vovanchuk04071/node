@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        margin: 0 auto;
+        max-width: 800px;
+        padding: 0 20px;
+      }
+
+      .container {
+        border: 2px solid #dedede;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      .darker {
+        border-color: #ccc;
+        background-color: #ddd;
+      }
+
+      .container::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      .container img {
+        float: left;
+        max-width: 60px;
+        width: 100%;
+        margin-right: 20px;
+        border-radius: 50%;
+      }
+
+      .container img.right {
+        float: right;
+        margin-left: 20px;
+        margin-right: 0;
+      }
+
+      .time-right {
+        float: right;
+        color: #aaa;
+      }
+
+      .time-left {
+        float: left;
+        color: #999;
+      }
+
+      #message-input {
+        width: 100%;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Chat Messages</h2>
+
+    <div id="chat"></div>
+
+    <form id="user-name-form">
+      <label for="">Введіть ваше ім'я:</label>
+      <input type="text" name="userName" placeholder="Ваше імʼя" required />
+    </form>
+    <div id="chat-message">
+      <form id="chat-form">
+        <input
+          class="container"
+          type="text"
+          name="messageInput"
+          placeholder="Введіть повідомлення..."
+        />
+        <button type="submit">Надіслати</button>
+      </form>
+    </div>
+  </body>
+  <script>
+    const ws = new WebSocket("ws://localhost:3006");
+    ws.onmessage = (message) => {
+      const { name, message: text } = JSON.parse(message.data);
+      const messageContainer = document.createElement("div");
+
+      messageContainer.innerHTML = `
+            <div class="container darker">
+            <p>${text}</p>
+            <span class="time-right">${name}</span>
+             </div
+            `;
+      chat.appendChild(messageContainer);
+    };
+
+    let username = "";
+    const userNameForm = document.getElementById("user-name-form");
+    const chat = document.getElementById("chat");
+
+    userNameForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      username = e.target.elements.userName.value;
+      userNameForm.remove();
+    });
+
+    const chatForm = document.getElementById("chat-form");
+    chatForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const message = e.target.elements.messageInput.value;
+
+      const messageContainer = document.createElement("div");
+
+      messageContainer.innerHTML = `
+        <div class="container">
+          <p>${message}</p>
+          <span class="time-right">${username}</span>
+         </div
+        `;
+      chat.appendChild(messageContainer);
+
+      ws.send(
+        JSON.stringify({
+          name: username,
+          message,
+        })
+      );
+      chatForm.reset();
+    });
+  </script>
+</html>

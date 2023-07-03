@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="03bb3a6a-e4b3-4bff-83b9-5f0e1b7db458" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/controllers/contacts/add.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/controllers/contacts/getAll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/controllers/contacts/getById.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/controllers/contacts/removeById.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/controllers/contacts/updateById.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/controllers/contacts/updateStatus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/controllers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/middlewares/ctrlWrapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/middlewares/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/models/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/middlewares/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/middlewares/validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/models/contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/models/contacts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/models/contacts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/models/db.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/routes/api/contacts-validation-schemes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/routes/api/contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/routes/api/contacts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/lesson2/lesson_2_homeWork/bin/server.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2RxWfHhmVjKebhpTIuLoDF4kky2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "app.teamhub.trackedBranches": "v2q79u/Firs_Server,-1130to2/master",
+    "git-widget-placeholder": "Firs__Server",
+    "last_opened_file_path": "/Users/volodimirvoloseckij/Documents/GitHub/node",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03bb3a6a-e4b3-4bff-83b9-5f0e1b7db458" name="Changes" comment="" />
+      <created>1688192313486</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1688192313486</updated>
+      <workItem from="1688192314777" duration="74000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

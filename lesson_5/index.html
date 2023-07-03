@@ -2,7 +2,6 @@
 <html lang="ua">
 <meta charset="UTF-8"/>
 <head>
-
     <title>Завантажити файли</title>
 </head>
 <body>
@@ -16,15 +15,13 @@
 <div id="status"></div>
 
 <script>
-    const form = document.getElementById('uploadForm')
-    form.addEventListener('submit', e => {
-        e.preventDefault()
-        const files = document.getElementById('fileInput').files
-        const formData = new FormData()
-        formData.append('file', files[0])
-    })
-
+    const form = document.getElementById("uploadForm");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const files = document.getElementById("fileInput").files;
+        const formData = new FormData();
+        formData.append("file", files[0]);
+    });
 </script>
 </body>
 </html>
- 
