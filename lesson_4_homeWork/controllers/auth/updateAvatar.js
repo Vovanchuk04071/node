@@ -1,7 +1,7 @@
 const { User } = require("../../models");
 const path = require("path");
 const fs = require("fs/promises");
-const { HttpCode } = require("../../helpers/constants");
+const { HttpCode } = require("../../helpers");
 const cloudinary = require("cloudinary");
 
 const { CLOUD_NAME, API_KEY, API_SECRET } = process.env;

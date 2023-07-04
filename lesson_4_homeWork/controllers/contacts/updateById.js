@@ -1,5 +1,5 @@
 const { Contacts } = require("../../models");
-const { HttpCode } = require("../../helpers/constants");
+const { HttpCode } = require("../../helpers");
 const updateById = async (req, res) => {
   const { contactId } = req.params;
   const contact = await Contacts.findByIdAndUpdate(contactId, req.body, {

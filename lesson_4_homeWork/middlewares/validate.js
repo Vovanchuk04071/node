@@ -1,4 +1,4 @@
-const { HttpCode } = require("../helpers/constants");
+const { HttpCode } = require("../helpers");
 
 const validate = (schema) => async (req, res, next) => {
   try {

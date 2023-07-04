@@ -5,7 +5,7 @@ require("dotenv").config();
 
 const contactsRouter = require("./routes/api/contact");
 const authRouter = require("./routes/api/users");
-const { HttpCode } = require("./helpers/constants");
+const { HttpCode } = require("./helpers");
 
 const app = express();
 

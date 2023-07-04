@@ -1,5 +1,5 @@
 const { Contacts } = require("../../models");
-const { HttpCode } = require("../../helpers/constants");
+const { HttpCode } = require("../../helpers");
 
 const removeById = async (req, res) => {
   const { contactId } = req.params;

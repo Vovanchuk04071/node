@@ -1,5 +1,5 @@
 const { Contacts } = require("../../models");
-const { HttpCode } = require("../../helpers/constants");
+const { HttpCode } = require("../../helpers");
 const updateStatus = async (req, res) => {
   const { contactId } = req.params;
   const { favorite } = req.body;

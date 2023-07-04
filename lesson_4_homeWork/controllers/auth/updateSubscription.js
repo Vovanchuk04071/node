@@ -1,5 +1,5 @@
 const { User } = require("../../models");
-const { HttpCode } = require("../../helpers/constants");
+const { HttpCode } = require("../../helpers");
 const updateSubscription = async (req, res) => {
   const { subscription } = req.body;
   const { id } = req.user;
